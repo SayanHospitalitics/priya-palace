@@ -1,6 +1,7 @@
 import { hotelContact } from '../../content/restaurant'
 import Button from '../Shared/Button'
 import SectionTitle from '../Shared/SectionTitle'
+import DateInput from '../Shared/DateInput'
 
 const input = 'block w-full rounded-md border border-dark/10 bg-light px-7.5 py-3.5   text-dark outline-none placeholder:text-dark/50 focus:border-primary'
 
@@ -16,8 +17,8 @@ export default function ContactForm() {
           <option value="" disabled>Enquiry Type</option>
           {['Room Stay', 'Banquet or Event', 'Dining', 'Other'].map((o) => <option key={o}>{o}</option>)}
         </select>
-        <input name="form_checkin" type="text" placeholder="Check-in Date" onFocus={(e) => (e.target.type = 'date')} className={input} />
-        <input name="form_checkout" type="text" placeholder="Check-out Date" onFocus={(e) => (e.target.type = 'date')} className={input} />
+        <DateInput name="form_checkin" placeholder="Check-in Date" className={input} />
+        <DateInput name="form_checkout" placeholder="Check-out Date" className={input} />
         <input name="form_guests" type="number" min={1} placeholder="Number of Guests" className={`${input} sm:col-span-2`} />
         <textarea name="form_message" rows={6} placeholder="Your Message" className={`${input} sm:col-span-2`} />
         <div className="sm:col-span-2">

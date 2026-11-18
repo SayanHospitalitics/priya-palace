@@ -7,8 +7,8 @@ export default function BanquetSection({ banquet, index }: { banquet: Banquet; i
   const imageFirst = index % 2 === 0
   return (
     <section className={index % 2 === 0 ? 'bg-white' : 'bg-light'}>
-      <div className="mx-auto grid max-w-6xl items-stretch gap-14 px-6 section lg:grid-cols-2 lg:gap-20">
-        <div className={imageFirst ? '' : 'lg:order-2'}>
+      <div className="mx-auto grid max-w-6xl items-stretch gap-14 px-6 py-12 lg:grid-cols-2 lg:gap-20">
+        <div className={`lg:h-[70vh] lg:self-center ${imageFirst ? '' : 'lg:order-2'}`}>
           <ImageGallery images={banquet.images} name={banquet.name} aspect="aspect-[2092/972]" fill />
         </div>
         <div className={imageFirst ? '' : 'lg:order-1'}>

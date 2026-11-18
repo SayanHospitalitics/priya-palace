@@ -3,6 +3,7 @@ import Button from '../Shared/Button'
 import Parallax from '../Shared/Parallax'
 import Reveal from '../Shared/Reveal'
 import SectionTitle from '../Shared/SectionTitle'
+import DateInput from '../Shared/DateInput'
 
 const input = 'block w-full border-0 bg-white px-7.5 py-4  text-dark outline-none placeholder:text-dark/50'
 
@@ -21,8 +22,8 @@ export default function Contact() {
               <form onSubmit={(e) => e.preventDefault()} className="grid gap-5 sm:grid-cols-2">
                 <input type="text" name="name" placeholder="Your Name" required className={input} />
                 <input type="email" name="email" placeholder="Email Address" required className={input} />
-                <input type="text" name="phone" placeholder="Check In" required className={input} />
-                <input type="text" name="subject" placeholder="Check Out" required className={input} />
+                <DateInput name="checkin" placeholder="Check In" required className={input} />
+                <DateInput name="checkout" placeholder="Check Out" required className={input} />
                 <textarea name="textarea" placeholder="Write a Message" rows={2} className={`${input} sm:col-span-2`} />
                 <div className="sm:col-span-2">
                   <Button type="submit" className="!px-8 !py-4">Contact the Hotel</Button>

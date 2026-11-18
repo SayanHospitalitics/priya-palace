@@ -1,3 +1,4 @@
+import { socialLinks } from '../../content/social'
 import { useEffect, useState } from 'react'
 import { FaBars, FaFacebookF, FaInstagram, FaMagnifyingGlass, FaPhone, FaPinterest, FaRegClock, FaRegEnvelope, FaXTwitter, FaXmark } from 'react-icons/fa6'
 import logoDark from '../../assets/images/logo.png'
@@ -5,7 +6,7 @@ import logoLight from '../../assets/images/logo.png'
 import { hotelContact } from '../../content/restaurant'
 import Container from './Container'
 import { currentLinkIndex, navLinks } from './navLinks'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const linkBase =
   "relative flex items-center  uppercase  tracking-wider transition-colors after:absolute after:bottom-0 after:left-0 after:h-px after:bg-current after:transition-all hover:text-primary hover:after:w-full"
@@ -28,7 +29,13 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
-  const current = currentLinkIndex()
+  const { pathname } = useLocation()
+  const current = currentLinkIndex(pathname)
+
+  useEffect(() => {
+    setMenuOpen(false)
+    setSearchOpen(false)
+  }, [pathname])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 100)
@@ -42,17 +49,17 @@ export default function Header() {
       {/* main header */}
       <header className="relative z-80 w-full border-b border-primary/40 bg-white">
         <Container>
-          <div className="flex items-center py-1">
-            <Link to="/"><img src={logoDark} alt="Hotel Priya Palace" className="block h-16 w-auto" /></Link>
+          <div className="flex items-center">
+            <Link to="/" className='py-2'><img src={logoDark} alt="Hotel Priya Palace" className="block h-12 w-auto" /></Link>
             <nav className="ml-auto hidden lg:block"><DesktopLinks current={current} /></nav>
-            <div className="ml-9 flex items-center gap-10 lg:ml-9 max-lg:ml-auto">
+            {/* <div className="ml-9 flex items-center gap-10 lg:ml-9 max-lg:ml-auto">
               <button type="button" aria-label="Search" onClick={() => setSearchOpen(true)} className="cursor-pointer border-0 bg-transparent p-0 text-medium text-primary">
                 <FaMagnifyingGlass />
               </button>
               <button type="button" aria-label="Menu" onClick={() => setMenuOpen(true)} className="cursor-pointer border-0 bg-transparent p-0 text-medium text-dark/60">
                 <FaBars />
               </button>
-            </div>
+            </div> */}
           </div>
         </Container>
       </header>
@@ -62,7 +69,7 @@ export default function Header() {
         className={`fixed inset-x-0 top-0 z-90 h-18 bg-white shadow-lg transition-opacity ${scrolled ? 'animate-slide-in-down opacity-100' : 'pointer-events-none invisible opacity-0'}`}
       >
         <Container className="flex h-full items-center">
-          <Link to="/"><img src={logoDark} alt="Hotel Priya Palace" className="block max-h-10 w-auto" /></Link>
+          <Link to="/"><img src={logoDark} alt="Hotel Priya Palace" className="block max-h-12 w-auto" /></Link>
           <nav className="ml-auto hidden lg:block"><DesktopLinks current={current} /></nav>
           <button type="button" aria-label="Menu" onClick={() => setMenuOpen(true)} className="ml-auto cursor-pointer border-0 bg-transparent p-0 text-medium text-primary lg:hidden">
             <FaBars />
@@ -101,9 +108,9 @@ export default function Header() {
             ))}
           </ul>
           <ul className="m-0 mt-auto flex list-none border-t border-white/10 bg-dark p-0">
-            {[FaXTwitter, FaFacebookF, FaPinterest, FaInstagram].map((Icon, i) => (
-              <li key={i} className="flex-1 border-r border-white/10 text-center last:border-r-0">
-                <a href="#" className="block text-white"><Icon className="mx-auto" /></a>
+            {socialLinks.map(({ label, Icon, url }) => (
+              <li key={label} className="flex-1 border-r border-white/10 text-center last:border-r-0">
+                <a href={url} target="_blank" rel="noreferrer" aria-label={label} className="block text-white"><Icon className="mx-auto" /></a>
               </li>
             ))}
           </ul>

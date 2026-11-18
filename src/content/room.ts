@@ -1,5 +1,5 @@
 // Source: HPP Website content.pdf (Hotel Priya Palace) - Home, Rooms & Suites and Individual Room Details pages
-import { classicRoomImages, corporateRoomImages, executiveRoomImages } from './images'
+import { corporateRoomImages, executiveRoomImages, queenRoomImages, twinRoomImages } from './images'
 
 export type Amenity = { icon: string; label: string }
 
@@ -36,6 +36,8 @@ export type Room = {
     image: string
     /** photos shown in the gallery on the rooms and room-details screens */
     gallery: string[]
+    /** which part of the first photo the page banner shows (CSS background-position); default centre */
+    bannerPosition?: string
 }
 
 // Every facility named in the PDF (icons are react-icons/fa6 names)
@@ -84,8 +86,8 @@ export const roomsList: Room[] = [
         },
         enquiryDescription:
             'Planning your stay at Hotel Priya Palace? Share your travel details and requirements. Our team will be happy to assist you with room availability and booking information.',
-        image: classicRoomImages[0],
-        gallery: classicRoomImages,
+        image: queenRoomImages[0],
+        gallery: queenRoomImages,
     },
     {
         type: 'Classic Room –',
@@ -114,8 +116,8 @@ export const roomsList: Room[] = [
         },
         enquiryDescription:
             'Planning a visit with friends, family or colleagues? Get in touch with our team to check the availability of our Twin Bed Room and make arrangements for your stay.',
-        image: classicRoomImages[1],
-        gallery: classicRoomImages,
+        image: twinRoomImages[0],
+        gallery: twinRoomImages,
     },
     {
         type: 'Executive Room',
@@ -176,6 +178,7 @@ export const roomsList: Room[] = [
             'Make your next visit to Guwahati comfortable and convenient. Get in touch with our team to enquire about the Corporate Suite, check availability and discuss your accommodation requirements.',
         image: corporateRoomImages[0],
         gallery: corporateRoomImages,
+        bannerPosition: 'bottom',
     },
 ]
 

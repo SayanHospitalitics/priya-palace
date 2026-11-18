@@ -28,7 +28,10 @@ const executive = load(import.meta.glob('../assets/images/rooms/executive/*.jpg'
 const corporate = load(import.meta.glob('../assets/images/rooms/corporate/*.jpg', { eager: true, query: '?url', import: 'default' }))
 
 // Galleries: best bedroom shots first, bathrooms last. Change the numbers to reorder / add photos.
-export const classicRoomImages = pick(classic, [15, 4, 7, 14, 11, 9, 1, 2])
+// Classic rooms: 4-13 show the queen (double) bed, 14-18 the two single beds, 1-3 are bathrooms
+export const queenRoomImages = pick(classic, [4, 7, 13, 12, 11, 6, 9, 1, 2])
+export const twinRoomImages = pick(classic, [15, 14, 16, 17, 18, 9, 3])
+export const classicRoomImages = [...queenRoomImages, ...twinRoomImages]
 export const executiveRoomImages = pick(executive, [1, 5, 8, 11, 10, 2, 14, 13])
 export const corporateRoomImages = pick(corporate, [1, 2, 3, 4, 5, 7, 6, 9])
 export const restaurantImages = pick(restaurant, [2, 4, 1, 5, 6, 7, 8, 9])

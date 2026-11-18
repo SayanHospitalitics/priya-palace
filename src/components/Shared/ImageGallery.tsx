@@ -56,7 +56,7 @@ export default function ImageGallery({ images, name, aspect = 'aspect-[16/10]', 
         images={images}
         active={active}
         onSelect={setActive}
-        onMore={() => { setActive(4); setPreview(true) }}
+        onMore={(i) => { setActive(i); setPreview(true) }}
         className="relative mt-5"
       />
 

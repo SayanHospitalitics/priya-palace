@@ -3,6 +3,7 @@ import { roomsList } from '../../../content/room'
 import { hotelContact } from '../../../content/restaurant'
 import { currentRoom, roomName } from '../../../content/roomHelpers'
 import { Link } from 'react-router-dom'
+import DateInput from '../../Shared/DateInput'
 
 const field = 'block h-14 w-full appearance-none border border-dark/10 bg-white px-4  text-dark outline-none focus:border-primary'
 
@@ -11,16 +12,16 @@ export default function RoomDetailsSidebar() {
   const others = roomsList.map((r, i) => ({ r, i })).filter(({ i }) => i !== index)
 
   return (
-    <aside className="min-w-0">
+    <aside className="min-w-0 border-s border-dark/5">
       <div className="lg:sticky lg:top-24">
-        <div className="mb-7.5 border border-primary/50 bg-white px-10 py-8 shadow-xl">
+        <div className="mb-7.5 bg-white px-10 py-8">
           <div className="mb-6 flex items-end justify-between">
             <h5>Reserve:</h5>
             <span className="text-right">Check-in: <span className="font-semibold text-dark">{hotelContact.checkIn}</span><br />Check-out: <span className="font-semibold text-dark">{hotelContact.checkOut}</span></span>
           </div>
           <form onSubmit={(e) => e.preventDefault()} className="grid grid-cols-2 gap-4">
-            <input type="text" placeholder="Check In" onFocus={(e) => (e.target.type = 'date')} className={`${field} col-span-2`} />
-            <input type="text" placeholder="Check Out" onFocus={(e) => (e.target.type = 'date')} className={`${field} col-span-2`} />
+            <DateInput name="checkin" placeholder="Check In" className={`${field} col-span-2`} />
+            <DateInput name="checkout" placeholder="Check Out" className={`${field} col-span-2`} />
             <select defaultValue="" className={`${field} col-span-2`}>
               <option value="" disabled>Room</option>
               {[1, 2, 3, 4, 'More'].map((n) => <option key={n}>{n}</option>)}
@@ -39,6 +40,7 @@ export default function RoomDetailsSidebar() {
           </form>
         </div>
 
+        {/* Explore Other Rooms now sits under the enquiry form (see OtherRooms.jsx); the old sidebar version is kept below, commented out.
         <div className="bg-light p-7.5">
           <h3 className="mb-5">Explore Other Rooms</h3>
           <ul className="m-0 list-none p-0">
@@ -54,6 +56,7 @@ export default function RoomDetailsSidebar() {
             ))}
           </ul>
         </div>
+        */}
       </div>
     </aside>
   )

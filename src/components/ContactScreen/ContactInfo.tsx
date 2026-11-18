@@ -18,9 +18,9 @@ export default function ContactInfo() {
       <ul className="m-0 mt-10 list-none p-0">
         {items.map(({ Icon, title, body }) => (
           <li key={title} className="mb-7 flex items-center gap-5">
-            <span className="grid size-15 shrink-0 place-items-center rounded-full bg-primary text-medium text-dark"><Icon /></span>
+            <span className="grid size-10 shrink-0 place-items-center rounded-full bg-primary text-medium text-dark"><Icon className='text-lg' /></span>
             <div>
-              <h6 className="mb-1 font-serif text-dark">{title}</h6>
+              <h6 className="mb-1 font-serif text-dark text-xl leading-[1]">{title}</h6>
               {body}
             </div>
           </li>

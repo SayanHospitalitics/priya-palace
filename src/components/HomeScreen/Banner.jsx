@@ -27,11 +27,11 @@ export default function Banner() {
               <Reveal delay={600}>
                 <h1 className="relative mb-0 font-display text-dark">A Welcoming Stay in the Heart of Guwahati</h1>
               </Reveal>
-              <Reveal delay={800}>
+              {/* <Reveal delay={800}>
                 <p className="mr-18 text-dark max-md:mr-0">
                   Whether you are visiting for business, travelling with family or planning a special occasion, Hotel Priya Palace brings together comfortable accommodation, inviting dining and thoughtfully arranged event spaces in Ulubari.
                 </p>
-              </Reveal>
+              </Reveal> */}
             </div>
             <Reveal delay={900} className="relative z-10 flex flex-wrap items-center gap-y-4">
               <Button href="/rooms-and-suites/rooms-search-result" className="!px-11 !py-4">Explore Rooms &amp; Suites</Button>

@@ -1,3 +1,4 @@
+import { House } from 'lucide-react'
 import { homeImages } from '../../content/images'
 import crown from '../../assets/images/icons/about16.png'
 import Button from '../Shared/Button'
@@ -29,6 +30,7 @@ export default function About() {
             <Parallax src={homeImages.aboutLarge} strength={0.08} className="aspect-[1045/1726] w-1/2" />
             <Parallax src={homeImages.aboutSmall} strength={0.08} className="aspect-[1045/1726] w-1/2" />
             <img src={crown} alt="" className="absolute top-1/2 left-1/2 size-25 -translate-x-1/2 -translate-y-1/2 rounded-full" />
+            {/* <House className="absolute top-1/2 left-1/2 size-25 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black p-5 text-white" strokeWidth={1.5} /> */}
           </Reveal>
         </div>
       </Container>

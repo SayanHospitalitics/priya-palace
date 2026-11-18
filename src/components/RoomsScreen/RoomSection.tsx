@@ -20,7 +20,7 @@ export default function RoomSection({ room, index }: { room: Room; index: number
 
   return (
     <section className={imageFirst ? 'bg-white' : 'bg-light'}>
-      <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 section lg:grid-cols-2 lg:gap-20">
+      <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 py-12 lg:grid-cols-2 lg:gap-20">
         <div className={imageFirst ? '' : 'lg:order-2'}>
           <ImageGallery images={room.gallery} name={name} />
         </div>

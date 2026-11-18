@@ -1,17 +1,16 @@
+import { socialLinks } from '../../content/social'
 import { FaFacebookF, FaInstagram, FaLinkedin, FaPaperPlane, FaWhatsapp } from 'react-icons/fa6'
 import logo from '../../assets/images/logo.png'
 import { hotelContact } from '../../content/restaurant'
 import Container from './Container'
+import { navLinks } from './navLinks'
 import { Link } from 'react-router-dom'
 
-const serviceLinks = [
-  { label: 'Rooms & Suites', href: '/rooms-and-suites/rooms-search-result' },
-  { label: 'Dhansiri Restaurant', href: '/restaurant' },
-  { label: 'Banquets & Events', href: '/banquets' },
-]
-const companyLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Contact', href: '/contact/contact' },
+// every page link (same list as the menu) plus the legal pages
+const quickLinks = [
+  ...navLinks,
+  { label: 'Privacy Policy', href: '#' },
+  { label: 'Terms & Conditions', href: '#' },
 ]
 
 const Title = ({ children }) => <h4 className="mb-7 text-white">{children}</h4>
@@ -24,7 +23,7 @@ export default function Footer() {
     <footer className="relative border-t-2 border-primary bg-dark text-white/50">
       <div className="pt-30 pb-8.5 max-md:pt-16">
         <Container>
-          <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-[4fr_3fr_2fr_4fr]">
+          <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-[4fr_3fr_4fr]">
             <div>
               <a href="#"><img src={logo} alt="Hotel Priya Palace" className="block h-13 w-auto" /></a>
               <p className="mt-5 mb-0 max-w-xs text-white/50">Hotel Priya Palace brings together comfortable accommodation, inviting dining and thoughtfully arranged event spaces in Ulubari.</p>
@@ -36,20 +35,15 @@ export default function Footer() {
               </form>
               <h4 className="mt-7.5 mb-3 text-white">Follow Us</h4>
               <ul className="m-0 flex list-none gap-4 p-0">
-                {[FaFacebookF, FaInstagram, FaLinkedin, FaWhatsapp].map((Icon, i) => (
-                  <li key={i}><a href="#" className="text-medium text-white/50 hover:text-primary"><Icon /></a></li>
+                {socialLinks.map(({ label, Icon, url }) => (
+                  <li key={label}><a href={url} target="_blank" rel="noreferrer" aria-label={label} className="text-medium text-white/50 hover:text-primary"><Icon /></a></li>
                 ))}
               </ul>
             </div>
 
             <div className="lg:pl-12">
-              <Title>Explore</Title>
-              <ul className="m-0 list-none p-0">{serviceLinks.map((l) => <li key={l.label}><FooterLink href={l.href}>{l.label}</FooterLink></li>)}</ul>
-            </div>
-
-            <div className="lg:pl-6">
-              <Title>Hotel</Title>
-              <ul className="m-0 list-none p-0">{companyLinks.map((l) => <li key={l.label}><FooterLink href={l.href}>{l.label}</FooterLink></li>)}</ul>
+              <Title>Quick Links</Title>
+              <ul className="m-0 list-none p-0">{quickLinks.map((l) => <li key={l.label}><FooterLink href={l.href}>{l.label}</FooterLink></li>)}</ul>
             </div>
 
             <div className="flex flex-col gap-12">

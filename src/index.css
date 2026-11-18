@@ -18,7 +18,8 @@
   --color-primary: #ffd700; /* gold: buttons, links, highlights */
   --color-secondary: #f5e6a6; /* champagne gold: soft accents, borders, sub-titles */
   --color-dark: #0b0b0b; /* near-black: text, footer, dark overlays */
-  --color-light: #fbf6dd; /* pale champagne section backgrounds */
+  /* --color-light: #fbf6dd;  */
+  --color-light: #fffef6; 
 
   /* Only three text sizes in the whole project:
      text-large  = banner + section headings (h1, h2)
