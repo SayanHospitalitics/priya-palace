@@ -9,7 +9,7 @@ export default function ContactForm() {
   return (
     <div>
       <SectionTitle sub="Enquiry Form">Send Us an Enquiry</SectionTitle>
-      <form onSubmit={(e) => e.preventDefault()} className="grid gap-5 sm:grid-cols-2">
+      <form onSubmit={(e) => e.preventDefault()} className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <input name="form_name" type="text" placeholder="Full Name" className={input} />
         <input name="form_phone" type="tel" placeholder="Phone Number" className={input} />
         <input name="form_email" type="email" placeholder="Email Address" className={input} />

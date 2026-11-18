@@ -11,7 +11,7 @@ const highlightIcons: IconType[] = [FaBellConcierge, FaUtensils, FaCouch, FaMeda
 export default function RestaurantSection() {
   return (
     <section className="bg-white">
-      <div className="mx-auto grid max-w-6xl items-center gap-14 px-6 section lg:grid-cols-2 lg:gap-20">
+      <div className="mx-auto grid grid-cols-1 max-w-6xl items-center gap-10 px-4 sm:px-6 section lg:grid-cols-2 lg:gap-20">
         <ImageGallery images={restaurant.images} name={restaurant.name} />
         <div>
           <SectionHeading label="In-house Restaurant">{restaurant.name}</SectionHeading>

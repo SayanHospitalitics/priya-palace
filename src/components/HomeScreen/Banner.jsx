@@ -18,7 +18,7 @@ export default function Banner() {
       <div className="absolute -bottom-16 -left-16 h-56 w-2/3 rounded-full bg-white/90 blur-3xl" />
 
       <Container className="relative z-20">
-        <div className="grid items-end gap-x-6 gap-y-12 lg:grid-cols-[7fr_5fr]">
+        <div className="grid grid-cols-1 items-end gap-x-6 gap-y-12 lg:grid-cols-[7fr_5fr]">
           <div>
             <div className="relative pb-8">
               {/* <Reveal delay={300} className="flex items-center text-primary">
@@ -44,7 +44,7 @@ export default function Banner() {
             </Reveal>
           </div>
 
-          <Reveal className="relative z-40 glass p-8 pb-0 rounded-t-4xl lg:mt-3 lg:ml-8">
+          <Reveal className="relative z-40 glass p-5 pb-0 sm:p-8 sm:pb-0 rounded-t-4xl lg:mt-3 lg:ml-8">
             <BookingForm />
           </Reveal>
         </div>

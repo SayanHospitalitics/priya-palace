@@ -45,7 +45,7 @@ export default function RoomDetailsMain() {
       {/* description */}
       {/* <h3 className="mb-3">{room.descriptionHeading}</h3> */}
       <p>{room.descriptionParagraphs[0]}</p>
-      <div className="mt-5 mb-5 px-10">
+      <div className="mt-5 mb-5 sm:px-10">
         <div className="grid grid-cols-2 gap-2 md:grid-cols-4">
           {[[FaRulerCombined, 'Room Size', room.area], [FaBed, 'Rooms Bed', room.bedType], [FaUsers, 'Occupancy', room.occupancy], [FaEye, 'View', room.view]].map(([Icon, label, value]) => (
             <div key={label} className="flex items-start gap-2">
@@ -69,7 +69,7 @@ export default function RoomDetailsMain() {
       {/* facilities */}
       <div className="mt-10">
         <h4 className="mb-5">Room Facilities</h4>
-        <div className="mb-10 grid gap-x-6 gap-y-4 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="mb-10 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 xl:grid-cols-3">
           {room.amenities.map((am) => {
             const Icon = Fa[am.icon] ?? Fa.FaCheck
             return (
@@ -96,7 +96,7 @@ export default function RoomDetailsMain() {
       <div className="bg-light p-6 lg:p-12">
         <h4 className="mb-3">Send Us Your Enquiry</h4>
         <p className="mb-5">{room.enquiryDescription}</p>
-        <form onSubmit={(e) => e.preventDefault()} className="grid gap-4 sm:grid-cols-3">
+        <form onSubmit={(e) => e.preventDefault()} className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <input name="form_name" type="text" placeholder="Full Name" className={field} />
           <input name="form_email" type="email" placeholder="Email Address" className={field} />
           <input name="form_phone" type="tel" placeholder="Phone Number" className={field} />

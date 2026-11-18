@@ -94,7 +94,7 @@
 
 /* ---- shared utilities (the only custom classes) ---- */
 @utility section {
-  @apply py-20 md:py-28;
+  @apply py-14 sm:py-20 lg:py-28;
 }
 @utility glass {
   @apply border border-white/70 bg-white/60 backdrop-blur-xl;

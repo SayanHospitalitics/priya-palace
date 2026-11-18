@@ -5,7 +5,7 @@ import Reveal from '../Shared/Reveal'
 import SectionTitle from '../Shared/SectionTitle'
 import DateInput from '../Shared/DateInput'
 
-const input = 'block w-full border-0 bg-white px-7.5 py-4  text-dark outline-none placeholder:text-dark/50'
+const input = 'block w-full border-0 bg-white px-7.5 py-4  text-dark outline-none placeholder:text-dark/50 max-lg:border max-lg:border-black/10'
 
 export default function Contact() {
   return (
@@ -13,13 +13,13 @@ export default function Contact() {
       <Parallax src={homeImages.contact} strength={0.08} className="absolute inset-y-0 left-0 hidden w-5/12 lg:block" />
       <div className="relative">
         <div className="ml-auto lg:w-7/12">
-          <div className="bg-light px-5 py-30 lg:pr-18 lg:pl-23 max-md:py-16">
+          <div className="bg-light px-4 py-14 sm:px-6 sm:py-20 lg:py-28 lg:pr-18 lg:pl-23">
             <Reveal>
               <SectionTitle sub="Contact Us">
                 Planning a Visit <br />
                 to Guwahati?
               </SectionTitle>
-              <form onSubmit={(e) => e.preventDefault()} className="grid gap-5 sm:grid-cols-2">
+              <form onSubmit={(e) => e.preventDefault()} className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <input type="text" name="name" placeholder="Your Name" required className={input} />
                 <input type="email" name="email" placeholder="Email Address" required className={input} />
                 <DateInput name="checkin" placeholder="Check In" required className={input} />

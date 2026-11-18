@@ -1,5 +1,5 @@
 import { socialLinks } from '../../content/social'
-import { FaFacebookF, FaInstagram, FaLinkedin, FaPaperPlane, FaWhatsapp } from 'react-icons/fa6'
+import { FaFacebookF, FaHeart, FaInstagram, FaLinkedin, FaPaperPlane, FaWhatsapp } from 'react-icons/fa6'
 import logo from '../../assets/images/logo.png'
 import { hotelContact } from '../../content/restaurant'
 import Container from './Container'
@@ -13,7 +13,7 @@ const quickLinks = [
   { label: 'Terms & Conditions', href: '#' },
 ]
 
-const Title = ({ children }) => <h4 className="mb-7 text-white">{children}</h4>
+const Title = ({ children }) => <h4 className="mb-5 text-white lg:mb-7">{children}</h4>
 const FooterLink = ({ href = '#', children }) => (
   <Link to={href} className="inline-block py-1 text-white/50 transition-colors hover:text-primary">{children}</Link>
 )
@@ -21,9 +21,9 @@ const FooterLink = ({ href = '#', children }) => (
 export default function Footer() {
   return (
     <footer className="relative border-t-2 border-primary bg-dark text-white/50">
-      <div className="pt-30 pb-8.5 max-md:pt-16">
+      <div className="pt-14 pb-8 sm:pt-20 lg:pt-28">
         <Container>
-          <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-[4fr_3fr_4fr]">
+          <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-[4fr_3fr_4fr]">
             <div>
               <a href="#"><img src={logo} alt="Hotel Priya Palace" className="block h-13 w-auto" /></a>
               <p className="mt-5 mb-0 max-w-xs text-white/50">Hotel Priya Palace brings together comfortable accommodation, inviting dining and thoughtfully arranged event spaces in Ulubari.</p>
@@ -59,8 +59,12 @@ export default function Footer() {
         </Container>
       </div>
       <div className="border-t border-white/10 pt-4 pb-5">
-        <Container className="text-center text-white/50">
-          &copy; 2026 <span className="text-white">Hotel Priya Palace</span>
+        <Container className="flex flex-col items-center justify-between gap-1 text-center text-white/50 sm:flex-row">
+          <p className="m-0">&copy; 2026 <span className="text-white">Hotel Priya Palace</span></p>
+          <p className="m-0 inline-flex flex-wrap items-center justify-center gap-1.5">
+            Designed &amp; Developed with <FaHeart className="text-primary" aria-label="love" /> by
+            <a href="https://eviotel.ai" target="_blank" rel="noreferrer" className="transition-colors text-primary hover:underline">Eviotel.ai</a>
+          </p>
         </Container>
       </div>
     </footer>

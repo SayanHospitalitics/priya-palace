@@ -4,7 +4,7 @@ import { hotelContact } from '../../content/restaurant'
 export default function RestaurantVisit() {
   return (
     <section className="bg-light">
-      <div className="mx-auto grid max-w-6xl gap-px px-6 section md:grid-cols-2">
+      <div className="mx-auto grid grid-cols-1 max-w-6xl gap-px px-4 sm:px-6 section md:grid-cols-2">
         <div className="flex items-start gap-5 bg-white p-10">
           <FaPhone className="mt-1 text-medium text-primary" />
           <div>

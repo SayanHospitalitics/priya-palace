@@ -7,7 +7,7 @@ export default function RoomsHelp() {
   return (
     <>
       <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-6 section text-center">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 section text-center">
           <h3 className="text-dark">Facilities available at the hotel</h3>
           <ul className="m-0 mt-6 flex list-none flex-wrap justify-center gap-2 p-0">
             {hotelFacilities.map((f) => (
@@ -20,7 +20,7 @@ export default function RoomsHelp() {
         </div>
       </section>
       <section className="bg-light">
-        <div className="mx-auto max-w-4xl px-6 section text-center">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 section text-center">
           <SectionHeading label="Need help choosing?" center>Let Us Help You Find the Right Room</SectionHeading>
           <p className="mt-6 text-dark/60">
             Tell us your travel dates, the number of guests and what you need from your stay. Our team can guide you through the available room options and confirm the details.

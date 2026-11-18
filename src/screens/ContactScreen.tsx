@@ -11,8 +11,8 @@ export default function ContactScreen() {
     <Page title="Contact Us | Hotel Priya Palace">
       <PageTitle title="Contact Hotel Priya Palace" crumb="Contact" image={pageBanners.contact} />
       <section className="relative">
-        <Container className="pt-28 pb-18 max-md:pt-16">
-          <div className="grid gap-x-12 gap-y-14 lg:grid-cols-[7fr_5fr]">
+        <Container className="py-14 sm:py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:gap-x-12 gap-y-10 lg:gap-y-14 lg:grid-cols-[7fr_5fr]">
             <ContactForm />
             <ContactInfo />
           </div>

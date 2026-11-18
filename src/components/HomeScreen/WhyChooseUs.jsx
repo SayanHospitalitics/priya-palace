@@ -15,12 +15,13 @@ const stats = [
 function Stat({ label, value, text }) {
   const [ref, seen] = useInView()
   return (
-    <div ref={ref} className="mb-7.5 max-w-md">
-      <p className="mb-4 font-serif text-dark">{label}</p>
-      <div className="relative h-1 rounded-md bg-dark/15">
-        <div className="relative h-full rounded-md bg-primary transition-[width] duration-1500 ease-out" style={{ width: seen ? `${value}%` : 0 }}>
-          <span className="absolute -top-10 right-0 translate-x-1/2 text-dark">{text}</span>
-        </div>
+    <div ref={ref} className="mb-6 max-w-md sm:mb-7.5">
+      <div className="mb-3 flex items-baseline justify-between gap-4">
+        <p className="m-0 font-serif text-dark">{label}</p>
+        <span className="text-dark">{text}</span>
+      </div>
+      <div className="h-1 rounded-md bg-dark/15">
+        <div className="h-full rounded-md bg-primary transition-[width] duration-1500 ease-out" style={{ width: seen ? `${value}%` : 0 }} />
       </div>
     </div>
   )
@@ -30,10 +31,10 @@ export default function WhyChooseUs() {
   return (
     <section className="relative section">
       <Container>
-        <div className="grid items-center gap-x-6 gap-y-14 lg:grid-cols-2">
+        <div className="grid grid-cols-1 items-center gap-x-6 gap-y-10 lg:gap-y-14 lg:grid-cols-2">
           <Reveal>
             <SectionTitle sub="The Hotel Experience" className="!mb-6">Stay, Dine and Gather in One Place</SectionTitle>
-            <p className="mb-12 max-w-lg">
+            <p className="mb-8 max-w-lg lg:mb-12">
               Bring the different parts of your visit together at one convenient address in Ulubari, Guwahati.
             </p>
             {stats.map((s) => <Stat key={s.label} {...s} />)}

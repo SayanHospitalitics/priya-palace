@@ -11,7 +11,7 @@ export default function About() {
   return (
     <section id="about" className="relative section">
       <Container>
-        <div className="grid items-center gap-x-6 gap-y-14 lg:grid-cols-2">
+        <div className="grid grid-cols-1 items-center gap-x-6 gap-y-10 lg:gap-y-14 lg:grid-cols-2">
           <Reveal className="lg:order-2">
             <SectionTitle sub="About Hotel Priya Palace" className="!mb-0">
               A Stay Shaped<br/>Around Your Needs

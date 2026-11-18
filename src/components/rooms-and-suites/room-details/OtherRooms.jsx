@@ -16,7 +16,7 @@ export default function OtherRooms() {
     <section className="section pt-0 bg-white">
       <Container>
         <SectionHeading label="Our Rooms" center>Explore Other Rooms</SectionHeading>
-        <div className="mt-12 grid gap-x-16 gap-y-16 px-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-14 px-4 lg:mt-12 lg:gap-x-16 md:grid-cols-2 lg:grid-cols-3">
           {others.map(({ r, i }) => (
             <Link key={i} to={`/rooms-and-suites/room-details?room=${i}`} className="group flex flex-col">
               <div className="relative">

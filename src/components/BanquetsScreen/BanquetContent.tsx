@@ -21,7 +21,7 @@ export default function BanquetContent({ banquet }: { banquet: Banquet }) {
       <p className="mb-3 font-serif italic text-dark">{banquet.tagline}</p>
       <p className="max-w-xl text-dark/60 text-md">{banquet.description}</p>
 
-      <ul className="m-0 mt-4 grid list-none gap-1 border-t border-primary/20 p-0 py-4 sm:grid-cols-2">
+      <ul className="m-0 mt-4 grid grid-cols-1 list-none gap-1 border-t border-primary/20 p-0 py-4 sm:grid-cols-2">
         {banquet.highlights.map((h) => (
           <li key={h} className="flex items-center gap-3 font-normal text-dark">
             <FaCheck className="shrink-0 text-primary" /> {h}

@@ -13,7 +13,7 @@ export default function RoomDetailsScreen() {
       <PageTitle title={roomName(room)} crumb="Room Details" image={room.gallery[0]} position={room.bannerPosition} parents={[{ label: 'Rooms & Suites', to: '/rooms-and-suites/rooms-search-result' }]} />
       <section className="relative section">
         <Container>
-          <div className="grid items-stretch gap-x-10 gap-y-14 lg:grid-cols-[7fr_5fr] xl:grid-cols-[2fr_1fr]">
+          <div className="grid grid-cols-1 items-stretch lg:gap-x-10 gap-y-10 lg:gap-y-14 lg:grid-cols-[7fr_5fr] xl:grid-cols-[2fr_1fr]">
             <RoomDetailsMain />
             <RoomDetailsSidebar />
           </div>

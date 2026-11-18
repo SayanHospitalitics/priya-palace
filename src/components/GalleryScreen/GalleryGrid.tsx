@@ -18,7 +18,7 @@ export default function GalleryGrid() {
   const tabs = [{ id: 'all', label: 'All', count: total }, ...categories.map((c) => ({ id: c.id, label: c.label, count: c.photos.length }))]
 
   return (
-    <section className="bg-white px-6 pb-20 md:pb-28">
+    <section className="bg-white px-4 pb-14 sm:px-6 sm:pb-20 lg:pb-28">
       <div className="mx-auto max-w-6xl">
         {/* sticks just under the fixed header (which shows after the first scroll) while the photos scroll beneath it */}
         <div className="sticky top-17.5 z-30 mb-10 bg-white backdrop-blur">
@@ -38,7 +38,7 @@ export default function GalleryGrid() {
         </div>
         </div>
 
-        <div key={filter} className="grid animate-fade-in-up gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div key={filter} className="grid grid-cols-1 animate-fade-in-up gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((p, i) => (
             <button
               key={p.src}

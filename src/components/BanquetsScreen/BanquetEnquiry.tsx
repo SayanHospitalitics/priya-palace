@@ -9,7 +9,7 @@ const field = 'block w-full border border-dark/10 bg-white px-5 py-3.5  text-dar
 export default function BanquetEnquiry() {
   return (
     <section id="plan-your-event" className="bg-light">
-      <div className="mx-auto grid max-w-6xl gap-14 px-6 section lg:grid-cols-[5fr_7fr] lg:gap-20">
+      <div className="mx-auto grid grid-cols-1 max-w-6xl gap-10 px-4 sm:px-6 section lg:grid-cols-[5fr_7fr] lg:gap-20">
         <div>
           <SectionHeading label={banquetEnquiry.label}>{banquetEnquiry.headline}</SectionHeading>
           <p className="text-dark/60">{banquetEnquiry.description}</p>
@@ -22,7 +22,7 @@ export default function BanquetEnquiry() {
             {hotelContact.email}
           </a>
         </div>
-        <form onSubmit={(e) => e.preventDefault()} className="grid gap-4 sm:grid-cols-2">
+        <form onSubmit={(e) => e.preventDefault()} className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <input type="text" placeholder="Full Name *" required className={field} />
           <input type="email" placeholder="Email Address *" required className={field} />
           <input type="tel" placeholder="Phone Number *" required className={field} />
