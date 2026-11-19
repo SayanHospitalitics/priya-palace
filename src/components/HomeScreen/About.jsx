@@ -1,6 +1,5 @@
-import { House } from 'lucide-react'
 import { homeImages } from '../../content/images'
-import crown from '../../assets/images/icons/about16.png'
+import logo from '../../assets/images/logo.png'
 import Button from '../Shared/Button'
 import Container from '../Shared/Container'
 import Parallax from '../Shared/Parallax'
@@ -29,8 +28,12 @@ export default function About() {
           <Reveal className="relative flex gap-5 lg:order-1">
             <Parallax src={homeImages.aboutLarge} strength={0.08} className="aspect-[1045/1726] w-1/2" />
             <Parallax src={homeImages.aboutSmall} strength={0.08} className="aspect-[1045/1726] w-1/2" />
-            <img src={crown} alt="" className="absolute top-1/2 left-1/2 size-25 -translate-x-1/2 -translate-y-1/2 rounded-full" />
-            {/* <House className="absolute top-1/2 left-1/2 size-25 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black p-5 text-white" strokeWidth={1.5} /> */}
+            {/* logo badge: white medallion with a gold ring and a fine inner ring, centred between the two photos */}
+            <div className="absolute top-1/2 left-1/2 grid size-24 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white p-1 shadow-xl ring-1 ring-primary sm:size-28 lg:size-32">
+              <div className="grid size-full place-items-center rounded-full border border-primary/70 p-2 sm:p-2.5">
+                <img src={logo} alt="Hotel Priya Palace" className="h-auto w-full object-contain" />
+              </div>
+            </div>
           </Reveal>
         </div>
       </Container>
