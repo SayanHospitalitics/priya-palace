@@ -27,12 +27,12 @@ export default function Footer() {
             <div>
               <a href="#"><img src={logo} alt="Hotel Priya Palace" className="block h-13 w-auto" /></a>
               <p className="mt-5 mb-0 max-w-xs text-white/50">Hotel Priya Palace brings together comfortable accommodation, inviting dining and thoughtfully arranged event spaces in Ulubari.</p>
-              <form onSubmit={(e) => e.preventDefault()} className="relative mt-7.5">
+              {/* <form onSubmit={(e) => e.preventDefault()} className="relative mt-7.5">
                 <input type="email" required placeholder="Email Address" className="block h-18 w-full border border-white/5 bg-white/[0.06] py-5 pr-16 pl-4.5 text-white outline-none placeholder:text-white/50" />
                 <button type="submit" aria-label="Subscribe" className="absolute top-0 right-0 grid h-18 w-17 cursor-pointer place-items-center border-0 bg-transparent p-0 text-medium text-primary">
                   <FaPaperPlane />
                 </button>
-              </form>
+              </form> */}
               <h4 className="mt-7.5 mb-3 text-white">Follow Us</h4>
               <ul className="m-0 flex list-none gap-4 p-0">
                 {socialLinks.map(({ label, Icon, url }) => (

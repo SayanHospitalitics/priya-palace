@@ -1,7 +1,7 @@
 // All photos, grouped by section. Each folder in src/assets/images is numbered 1.jpg, 2.jpg, ...
 // (optimised copies; the untouched originals are in src/assets/originals).
 
-import homeBanner from '../assets/images/home/banner.jpg'
+import homeBanner from '../assets/images/home/banner.jpeg'
 import homeAbout1 from '../assets/images/home/about-1.jpg'
 import homeAbout2 from '../assets/images/home/about-2.jpg'
 import homeWhy from '../assets/images/home/why-choose-us.jpg'
